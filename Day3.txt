@@ -1,0 +1,88 @@
+Topics:
+
+ 
+
+1. Validation in vue.js (Done)
+    - Basic validation
+    - Validation with plugin(add-on plugins)
+	https://vuelidate.js.org/#getting-started
+	https://vee-validate.logaretm.com/v4/    (npm install vee-validate@next --save)
+	
+	-yup installation (npm i --save yup)
+
+ 
+
+2. Beautification of the vue component (Done)
+    - Bootstrapping(supporting vue2 not supporting vue 3) 
+    - Prime-ng integration (supported by vue 2 and vue 3)
+	
+	For the beautification of the ui there are various library to support beautification
+	a) Vue bootstrap(https://bootstrap-vue.org/) - Vue2
+	b) Element UI(https://element.eleme.io/#/en-US) - Vue2
+	c) Material UI(https://material-ui.com/) - Vue2
+	d) MUSE-UI(https://muse-ui.org/#/en-US) - Vue2
+	e) Vuetify(https://vuetifyjs.com/en/) - Vue2/Vue3
+	f) Prime-ng(https://primefaces.org/primevue/) - Vue2/Vue3 
+		
+		npm install primevue@^3.3.5 --save
+		npm install primeicons --save
+		Note: Prime ng will give us extraordinary beautiful ui component in the form of charts for 
+		      data visualization apart from the common component we used in bootstrapping
+			npm install chart.js --save 
+		Note: For vue 3 we have to use prime ng chart version 2.9.4
+
+	g) Quasar(https://quasar.dev/) - Vue2
+
+ 
+
+3. Directives in vue.js
+    - Internal directives(v-for,v-bind,v-html,v-on,v-model etc)
+    - External directive
+	There is two ways to create external directives
+	a) Static directive which is always fixed and do the dom manipulation
+	b) Dynamic directive which is changed as per user input
+	
+	NOTE: Study javascript DOM api
+	      In vue directives are called using v-{directive}
+	      When using the directive use '' to define the attribute in side "" 
+ 
+
+4. Backend creation with JSON server
+	1. Creating the fake api(REST api), we are creating the JSON server in different project
+	commands-
+		1. npm init (which will create the project structure)
+		2. npm i -g json-server (it will install JSON server dependencies in the project)
+		3. npm i -g axios (optional library for calling api)
+ 	Note:
+		1. Create a folder at root level (JSON-SERVER-API)
+		2. cd JSON-SERVER-API
+		3. run npm init
+		4. run npm install
+		4. then we have to create two files routes.json and users.json (echo>>filename.json)
+		5. Add routes and user data to the two files
+		6. npm i -g json-server
+		7. json-server --port 7000 --routes routes.json --watch users.json
+		8. Browse the server
+
+5. HTTP module extension with vue 3
+
+ 
+
+6. Integration with HTTP module component with backend integration
+
+ 
+
+7. Assignment
+Create a customer form with customer form component which will take three input (Name, age, location)
+perform certan operations using array.
+1. Create customer
+2. Delete customer
+3. Update customer
+4. List customer
+
+Note: 
+	1. In the existing customer form add the validation plugin vee-validate moreover apply all the
+	validation over form
+	2. For bootstrapping the customer form apply the prime ng component in the existing aplication and make the interactive view
+	3. Develop one more custom directive for changing the font of the list which is displayed in the customer application
+	4. And apply the existing custom directive to change the background of the list

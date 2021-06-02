@@ -1,0 +1,46 @@
+Arrow function
+
+
+
+1. Arrow function is represent by (=> in C# or (-> in java/python)) =>
+2. Arrow functions are normal functions which are represented in expression
+Note: ES6 code is twice to thrice times faster as comparision to ES5.
+
+
+
+Spread operator:
+
+
+
+1. Spread operator are represented by ...
+2. Spread operators are converting in no of parameters in Array object.
+
+
+
+Destructuring in ES6:
+
+1. Three demos of destructuring
+Simple destructuring of array
+Destructuring of JSON object
+Destructuring of complex JSON object
+
+
+
+
+Assignment :--> 
+
+ 
+
+ Craete the Array of Customer ! & perform the various operation here using ES6 code :-->
+
+ 
+
+1. CraeteCustomer 
+2. UpdateCustomer
+3. DeleteCustomer 
+4. UpdateCustomer. 
+
+ 
+
+Note :-- All will Execute with Switch case in javaScript code.
+++++++++++++++++++++++++++++++++++++++++++++++++++++

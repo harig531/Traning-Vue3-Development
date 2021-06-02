@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+<script>
+// ES6
+// Class
+class Person{
+
+    #test;
+
+// In JS/ES we can only craete one Constructure in a class
+    constructor(name,age){
+        this.name=name;
+        this.age=age;
+        this.#test=100;
+        console.log('person Obj is init');
+        console.log('Name of the Person-->' +this.name);
+        console.log('Age of the Person-->' +this.age);
+    }
+
+
+#stuffprivate(){
+ 
+   console.log('this is my private');
+
+    return this.#test;
+}
+
+
+//  public method create 
+
+  // define public method here 
+
+  getConCatValue() {
+     
+     return this.conCat();
+      }
+
+  conCat() {
+  
+     return this.name +" "+ this.age;
+  }
+  
+// define the previledged method here 
+
+ preMethod(){
+
+   console.log('calling Stuff private using previledged method-->');
+     return this.#stuffprivate();
+ }
+
+
+// Static implementation 
+
+  static myStaticMethod(){
+
+
+    return 'Static Impl here';
+  }
+
+
+    testOvveride(){
+
+     console.log('Call parent Ovveride here -->');
+        return "i am parent Ovveride here -->";
+    }
+
+
+
+}// class defination is over here 
+
+
+Person.prototype.ref=100;
+Person.prototype.sayHello=function(){
+   
+    console.log('prototype Implemenattion');
+
+    return "the Add on Extension" +this.ref;
+}
+// End of Prototype here 
+
+class Student extends Person{
+
+
+   testChildMethhod(){
+
+    console.log('child Method Impl-->');
+
+     return 'call the Child here';
+   }
+
+
+   testOvveride(){
+        console.log(super.testOvveride());
+        console.log('Call Child Ovveride here -->');
+   return "i am Child Ovveride here -->";
+}
+
+
+
+}
+
+
+
+//let p=new Person('Training',5);
+
+ let s=new Student('Training',5);
+
+console.log('call the public method-->' +s.getConCatValue());
+//console.log('call private impl-->' +p.stuffprivate());
+console.log('calling previledged method-->' +s.preMethod());
+
+// calling prototype here 
+
+console.log('calling the prototype here -->' +s.sayHello());
+
+// Calling static Impl 
+
+console.log('call static impl here-->' +Person.myStaticMethod());
+
+// call the Student class here 
+
+console.log('call the student class method-->' +s.testChildMethhod());
+
+// call the 
+
+console.log("call the ovverride method-->" +s.testOvveride());
+
+</script>
+
+
+</head>
+<body>

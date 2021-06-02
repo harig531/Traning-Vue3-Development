@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+    
+    // function testLet(x){
+    //     var y;
+    //     if(x==1){
+    //         var d =10;
+    //         y=2;
+    //         console.log("print d="+d);
+    //         console.log("print y="+y);
+    //     }
+    //     console.log("print d="+d);
+    //     console.log("print y="+y);
+    // }
+    // testLet(1);
+    // console.log(y);
+
+    //Arrow function imp
+    // var multiply = function(x,y) {
+    //     return x*y;
+    // }
+    // console.time('ES5');
+    // console.log(multiply(2,3));
+    // console.timeEnd('ES5');
+
+    // let multiply1 =(x,y)=>{return x*y;}
+    // console.time('ES6');
+    // console.log(multiply1(2,3));
+    // console.timeEnd('ES6');
+
+    //Spread operator
+    // (function(){
+    //     function log(...params){
+    //         console.log(params[0]);
+    //         console.log(params);
+    //     }
+    //     log(1,2,3,4,5,6,7,8,9,10);
+    // })();    
+
+// //Array of movies
+// let movies=['The Matrixs','star wars','don'];
+
+// // Destructuring the Array
+// let [test,favoriate,ggg]=movies; // E6 implementation
+
+// 	console.log(test);
+// 	console.log(favoriate);
+// 	console.log(ggg);
+
+//Demo 2 to JSON destructuring
+
+(function(){
+
+let movies={
+			title: 'The Matrixs',
+			year:'1999',
+			genre:'action',
+			cast:[
+			      
+			  {name:'Keanu Reeves', role: 'Neo'},
+			  {name:'Laurences Fishburne', role: 'Morpheus'},
+			  {name:'Carrie-Anne Moss', role: 'Trinity'},
+			    
+                
+          ]
+    };
+    //The data of year has copied in y separated with delimiter
+    let {title,year:y,genre,cast:[{role:mainRole}]}=movies
+
+
+// print teh details of JSON 
+
+    console.log(title);
+    console.log(y);
+    console.log(genre);
+    console.log(mainRole);
+
+    //Iterating the all loops
+    for (let {role: mainRole, name :testName} of movies.cast) {
+      
+      console.log('Role: ' + mainRole);
+      console.log('Name' +testName);
+    }  
+
+
+
+
+})();
+
+// link for 3rd example
+//https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

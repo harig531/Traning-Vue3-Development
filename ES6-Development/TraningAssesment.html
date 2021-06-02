@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<script>
+   class calculator
+   {
+    constructor(firstval,secondvalue)
+    {
+        this.firstval=firstval;
+        this.secondvalue= secondvalue;
+    }
+
+    add()
+    {
+        return this.firstval + this.secondvalue;
+    }
+    Sub()
+    {
+        return this.firstval - this.secondvalue;
+    }
+    Divison()
+    {
+        return this.firstval / this.secondvalue;
+    }
+    Multify()
+    {
+        return this.firstval * this.secondvalue;
+    }
+
+   }
+
+   class scinceCalc extends calculator
+   {
+
+   }
+
+   scinceCalc.prototype.ref=100;
+   calculator.prototype.sayHello=function(){   
+    console.log('prototype Implemenattion');
+}
+  
+var Calc= new calculator(10,20)
+
+console.log("the sum" + Calc.add())
+
+console.log("the substract" + Calc.Sub())
+
+console.log("the Divison" + Calc.Divison())
+
+console.log("the Multify" + Calc.Multify())
+
+</script>
+<body>
+    
+</body>
+</html>

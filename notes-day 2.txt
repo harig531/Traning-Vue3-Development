@@ -1,0 +1,68 @@
+Vue setup - 
+1. npm install -g @vue/cli
+2. vue --version
+3. vue create zensarProject
+4. vue --help
+5.npm run serve
+ 
+Vue project structure description
+1. Node_module - It contains all dependencies of the modules.
+2. public - Entry point of your application.(index.html / vue.icon)
+3. src - Assets - It contains all the project assests with icon/logo/css
+     components - It contains all the vue component (SFC component and normal component)
+     App.vue - Its main vue component which is responsible to registered other vue components.
+     main.js - Its render the app to the specific placeholder and contains the mount configuration of vue app.
+4. babel.config.js - Its contain the babel configuration file for compilation as for define all the preset of the compilation.
+5. package-lock.json - its a temporary file which contains all the npm registry information with url description related to project.
+6. package.json - It contains all the dependcies and dev dependencies.
+    Scripts -
+        1. serve - Running the application (npm run serve)
+        2. build - Bundle the application and creating the dist folder (npm build)
+        3. lint -  It will linting the application and check the code quality.
+        4. test - Testing the all vue component (npm test)
+ 
+Note - Selectors in javascript and javascript frameworks
+    1. # is for id selector
+    2. . represents to class selector.
+    3. <> element selector.
+    4. [] attribute selector. 
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+ 
+Topics - 
+1. Vue with vue jsx - Done
+2. Vue application with Hello world. - Done
+3. Vue component, SFC component and normal component.
+4. Create multiple component and register in vue app.
+5. Data binding (one way and two way) using vue expression using v-model directive.- Done
+6. Simple vue form.
+7. Assignment.
+ 
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+1. Vue with vue jsx - 
+    1. Vue contains the SFC components which contains three sections.
+        section 1. <template></template> (It contains the complete html code which will visualise to the browser)
+        section 2. <script></script> (This contains all the component javascript code for binding data computation, business method implimentation)
+        section 3. <style></style> (This contains all the css and sass (syntactical awesome style sheet https://sass-lang.com/) script which will manage the look and fill of components)
+3. Vue component, SFC component and normal component.
+    Note - Creating a new component in vue.js we need to add the extension which is called VGC (Vue generate component) extension.
+npm install -g vue-generate-component
+ 
+Two important commands
+    1. vgc -s testcomponent (SFC component)
+    2. vgc -c testcomponent2 (Normal component)
+ 
+5. Data binding (one way and two way) using vue expression using v-model directive.
+    1. Data binding in Vue.js Note - We can bind the data in vue.js using two approaches.
+        1. One way binding - {{}} This is vue expression. - This is using for binding the data.
+        2. Two way binding - v-model - It is similar to ngmodel in angular which is using as a internal directive in a application.
+        Note - Vue contains two type of directives which are using for manipulating the data.
+            1. Internal directive.(v-model, v-if, v-for, v-html, etc.)
+            2. External directive.
+ 
+Assignment - 
+Create a customer form with customer form component which will take three input (Name, age, location)
+perform certan operations using array.
+1. Create customer
+2. Delete customer
+3. Update customer
+4. List customer

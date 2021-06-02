@@ -1,12 +1,104 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
+    <script>
+         
+         // ES5
+
+         function Person()
+         {
+             console.log("THIS is ES5")
+         }
+    
+         var p = new Person();
+
+         function  hello()
+         {
+             console.log("this is hello Message")
+         }
+
+         hello();
+
+         //ES6
+
+         
+// ES6
+// Class
+class Person1{
+
+
+constructor(){
+
+    console.log('person Obj is init');
+}
+}
+
+let p1=new Person1();
+
+// method
+
+function helloOne(){
+
+console.log('i am the methos of ES 6')
+}
+
+helloOne();
+
+
+class FirstEmploye
+{
+
+    #test;
+    constructor(name,age)
+    {
+        this.name=name;
+        this.age=age;
+        this.#test=100;
+        console.log('Personal detais')
+        console.log('Name of Person : ' + this.name)
+        console.log('Name of Age : ' + this.age)
+    }
+
+    getCont()
+    {
+            return this.concat();
+    }
+
+    concat()
+    {
+        return  this.name + '-' + this.age;
+    }
+
+
+#stuffprivate(){
+ 
+ console.log('this is my private');
+
+  return this.#test;
+}
+
+preMethod(){
+console.log('calling Stuff private using previledged method-->');
+  return this.#stuffprivate();
+}
+
+}
+var a = new FirstEmploye('hari',20)
+
+console.log('calling previledged method-->' +a.preMethod());
+
+console.log('call the public method-->' + a.getCont());
+
+    </script>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=git push -u origin main, initial-scale=1.0">
     <title>Document</title>
 </head>
 <body>
+
+     
     
 </body>
 </html>

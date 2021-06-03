@@ -1,24 +1,19 @@
 <template lang="html">
 
 
-
-
-
-
-
 <div class="">
-  <h1 class="title has-text-centered">Employee Detais</h1>
+  <h1>Employee Detais</h1>
 <form>
     <div class="p-fluid p-grid">
-    <label  for="firstname" style=" :10px">Name</label>
+    <label  for="firstname" style=" :10px" v-fontchange>Name</label>
     <div class="col-sm-10">
       <InputText type="text"  class="p-mb-2 p-d-block" placeholder="Name" v-model="newUser.name"  />
     </div>
   </div>
   <div class="p-fluid p-grid">
-    <label class="col-sm-2 col-form-label font-weight-bold">Age</label>
+    <label class="col-sm-2 col-form-label font-weight-bold" v-fontchange>Age</label>
     <div class="col-sm-10">
-      <InputText type="text"  class="p-mb-2 p-d-block" placeholder="Age" v-model="newUser.age" />
+      <InputNumber v-model="newUser.age" :max="150" />
     </div>
   </div>
   <div class="p-fluid p-grid">
@@ -38,29 +33,40 @@
 
 <br />
 <br />
-<table class="table table-dark">
+<!-- v-tableBg -->
+<div class="p-grid">
+<table >
+  
+
+<div class="p-col-fixed" style="width:100px">
   <thead>
     <tr>
       <th scope="col">Id</th>
       <th scope="col">Name</th>
       <th scope="col">Age</th>
       <th scope="col">Location</th>
-      <th scope="col" class="col-sm-2">Edit</th>
-      <th scope="col" class="col-sm-2">Delete</th>
+      <th scope="col" class="col-sm-2"></th>
+      <th scope="col" class="col-sm-2"></th>
     </tr>
   </thead>
+</div>
+<div class="p-col">
   <tbody>
     <tr v-for="(user, index) in users" :key="index">
-      <th scope="row">{{ user.id }}</th>
-      <td>{{ user.name }}</td>
+      
+      <td scope="row">{{ user.id }}</td>
+      <td>{{$filters.toUpper(user.name)}}</td>
       <td>{{ user.age }}</td>
       <td>{{ user.location }}</td>
-      <td><button type="submit" class="btn btn-warning" @click.prevent="editUser(user)">Edit</button></td>
-      <td><button type="submit" class="btn btn-danger" @click.prevent="deleteUser(user.id)">Delete</button></td>
+      <td><Button icon="pi pi-check" class="p-button-rounded p-button-text" type="submit" @click.prevent="editUser(user)" /></td>
+      <td><Button icon="pi pi-times" class="p-button-rounded p-button-danger p-button-text" type="submit"  @click.prevent="deleteUser(user.id)"></Button></td>
     </tr>
   </tbody>
+</div>
 </table>
 </div>
+</div>
+
 
 </template>
 
@@ -81,7 +87,7 @@
     methods: {
       addUser(){
         if ( this.newUser.name.trim() !="" &&
-        this.newUser.age.trim() !="" &&
+    
         this.newUser.location.trim() !="")     
         {
           const elementIndex = this.users.findIndex(element => element.id == this.newUser.id )
@@ -105,6 +111,7 @@
           location: this.newUser.location
           }
           this.users.push(userAdd);
+       
           }
         }
         this.clearForm();    
@@ -150,6 +157,16 @@
 </script>
 
 <style scoped>
+.table-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.product-image {
+    width: 50px;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23)
+}
   .employeewithbootstrap {
 
   }

@@ -1,5 +1,5 @@
 {
-  "name": "zensarprojecr",
+  "name": "vue-3-crud",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -9,15 +9,12 @@
   },
   "dependencies": {
     "axios": "^0.21.1",
-    "chart.js": "^2.9.4",
+    "bootstrap": "^4.6.0",
     "core-js": "^3.6.5",
-    "primeflex": "^2.0.0",
-    "primeicons": "^4.1.0",
-    "primevue": "^3.3.5",
-    "vee-validate": "^4.4.2",
+    "jquery": "^3.6.0",
+    "popper.js": "^1.16.1",
     "vue": "^3.0.0",
-    "vue-toasted": "^1.1.28",
-    "yup": "^0.32.9"
+    "vue-router": "^4.0.6"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "~4.5.0",

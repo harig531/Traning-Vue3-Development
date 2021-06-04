@@ -1,6 +1,8 @@
 import { createApp } from 'vue'
 import App from './App.vue'
 
+import router from './router/router'
+
 // Import Bootstrap an BootstrapVue CSS files (order is important)
 import 'primevue/resources/themes/saga-blue/theme.css'
 import 'primevue/resources/primevue.min.css'
@@ -26,12 +28,20 @@ import InputNumber from 'primevue/inputnumber';
 import DataTable from 'primevue/datatable';
 import Column from 'primevue/column';
 import Toolbar from 'primevue/toolbar';
-//import Chart from 'primevue/chart';
+import DataView from 'primevue/dataview';
+import Toast from 'primevue/toast';
+import ToastService from 'primevue/toastservice';
+
+
+import Chart from 'primevue/chart';
 
 //createApp(App).mount('#app')
 
 const app = createApp(App)
 app.use(PrimeVue,{inputStyle: 'filled'});
+
+app.use(ToastService);
+app.use(router)
 
 app.component('Button', Button);
 app.component('InputText', InputText);
@@ -39,8 +49,9 @@ app.component('InputNumber', InputNumber);
 app.component('DataTable', DataTable);
 app.component('Column', Column);
 app.component('Toolbar', Toolbar);
-
-//app.component('Chart', Chart);
+app.component('DataView', DataView);
+app.component('Toast', Toast)
+app.component('Chart', Chart);
 
 app.directive("highlight",{ //highlight is the name of directive
     beforeMount(el,binding){ //it is a component lifecycle function which is called implicitely whenever rendered or mounted on the container
@@ -71,7 +82,12 @@ app.config.globalProperties.$filters = {
 
     toUpper(value) {
         return value.toUpperCase();
-      }
+      },
+
+      CamleCase(value){
+        return value.replace(/(?:^|\s|-)\S/g, x => x.toUpperCase());
+    }
+
 
   }
 

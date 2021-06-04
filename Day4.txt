@@ -1,0 +1,106 @@
+Topics
+
+1. HTTP module extension with vue 3 (done)
+2. Integration with HTTP module component with backend integration(JSON server) (done)
+3. Debugging with vue.js (done)
+4. Filters in Vue.js (done)
+5. Watchers in Vue.js (done)
+
+Will discuss tomorrow
+6. SPA(Single page application) development in vue
+	Note: Difference between MPA vs SPA
+7. Routers in Vue development
+
+
+=============================================================================
+
+HTTP module extension with vue 3
+	Note: For accessing the fake api in JSON server and test those api we want require two 
+	important clients which is extension for browser
+		1. Postman
+		2. ARC(Advance rest client)
+
+	We will implement various http methods for performing the CRUD operations
+	1. HTTP GET - 200 K 	: To fetch the details
+	2. HTTP POST - 201 K 	: Create details
+	3. HTTP PUT - 200 K 	: Update details
+	4. HTTP DELETE - 200K 	: Delete details
+
+	Install chrome extensions Postman and ARC, applications can be found in chrome://apps/
+
+	Steps to post data:
+		- Take JSON data
+		- Goto postman select POST and point the URL to create user
+		- Add JOSN data to Body->raw
+		- In Headers select Key as Content-Type and value as application/json
+		- Send the request
+		- Refresh the get url to see updated data
+	Note: For vue level http based communication we will use third party api for backend 	communication
+	1. Promise api(core ES6 api)
+	2. Fetch api 
+	3. Axios (recommended https://www.npmjs.com/package/axios)
+		- npm install axios --save
+
+=============================================================================
+
+Debugging with vue.js
+	- we can do debugging in vue.js in two ways
+		1. Chrome dev tools for debugging
+		2. Vuejs-logger integration for production debugging 
+	Note:
+	There is two dev extensions in chrome 
+		1. Vue 2 dev extension (stable)
+		2. Vue 3 dev extension (beta, not compatible for source code debugging)
+	
+	For Vue3logger(https://www.npmjs.com/package/vuejs3-logger)
+		1. npm install vuejs3-logger --save-exact
+		2. import vue3logger
+		3. set app as production and loggin options in main.js and use them 
+		5. call this.$log.debug() for debugging purpose.
+=================================================================================
+
+Filters in Vue.js
+	Note: 
+		1. Filters are using specially on ui for filtering the model data
+		2. We can represent the filter using | symbol
+		3. It will always be applicable on model
+		4. There is lots of changes in filter level concept btw vue2 -> vue3
+
+	Component(For property and events) vs Filter(Module filterisation) vs Directive(It's used for 	DOM manipulation)
+		
+	Filters are no longer supported in vue 3, different method has been provided to create filters
+	https://v3.vuejs.org/guide/migration/filters.html#_2-x-syntax 
+	Local Filter:
+		1. Filters are used in methods or computed properties
+	
+	Global Filter:
+		2. Register the filter in main.js and it will be accessible in the whole application
+===============================================================================================
+
+Watchers in Vue.js (https://v3.vuejs.org/guide/composition-api-lifecycle-hooks.html)
+	Note: 
+		1. A watcher is a special vue feature that allows you to spy on one property of component state
+		and run a function when the property value changes
+		2. A vue watcher allows you to listen the component data and run whenever the property changes
+	
+	Working with watchers
+		1. import ref and watch from vue in your component
+		2. create setup() and add a ref to store the input
+		3. then watch the input using watch(input) and then return the input and bind it to some element on template
+
+================================================================================================================================
+
+Lab assignment: Develop custom filter which will change the list of the column firstName in upppercase
+		note: this filter should be implemented globally (10 Mins)
+
+Assignment 4
+	- Convert the existing customer application with REST api implementation using axios
+	and do the integration with JSON server (GET, POST, PUT, DELETE)
+	Note
+	- In the existing app apply global filter to change the first name and lastname in CamelCase(for example Amit)
+	- Apply vue logger in the existing application for REST component
+	- rest keep remain prime ng , validation, custom directive
+
+
+
+

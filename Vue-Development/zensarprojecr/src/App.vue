@@ -1,10 +1,18 @@
 <template>
 
 <div>
-  <watchcomponent> </watchcomponent>
 
+ <router-link :to="{name:'Home'}">Home</router-link> ||
+  <router-link :to="{name:'Day4'}">Employee List</router-link> ||
+  <router-link :to="{name:'About'}">Json Employee List</router-link>
+  ||  <router-link :to="{name:'PluginValidateComponent'}">Plugin Validate Component</router-link>
+  ||  <router-link :to="{name:'watchcomponent'}">watch logger Componenet</router-link>
+  ||  <router-link :to="{name:'chartcomponent'}">chart Componenet</router-link>
+
+  
+  <router-view></router-view>
 </div>
-
+   <Toast/>
 </template>
 
 <script>
@@ -20,7 +28,8 @@
 // /import employeewithbootstrap from './components/employeewithbootstrap.vue'
 
 //import jsoncommunication from './components/jsoncommunication.vue'
-import watchcomponent from './components/watchcomponent.vue'
+//import watchcomponent from './components/watchcomponent.vue'
+//import day4 from './components/day4.vue'
 
 export default {
   name: 'App',
@@ -29,7 +38,8 @@ export default {
     //validation,PluginValidateComponent
    // jsoncommunication
     // ,employeewithbootstrap
-    watchcomponent
+    //watchcomponent
+  //  day4
     
   }
 }

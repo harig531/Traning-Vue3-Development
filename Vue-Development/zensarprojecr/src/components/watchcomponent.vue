@@ -15,7 +15,7 @@ import { ref,watch } from "vue";
   export default  {
     name: 'watchcomponent',
     props: [],
-     setup()
+    setup()
      {
        const search = ref("");
        watch(search,(newSearch,previousSearch)=>

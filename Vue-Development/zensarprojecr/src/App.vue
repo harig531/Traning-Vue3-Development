@@ -2,16 +2,26 @@
 
 <div>
 
- <router-link :to="{name:'Home'}">Home</router-link> ||
+ <!-- <router-link :to="{name:'Home'}">Home</router-link> ||
   <router-link :to="{name:'Day4'}">Employee List</router-link> ||
   <router-link :to="{name:'About'}">Json Employee List</router-link>
   ||  <router-link :to="{name:'PluginValidateComponent'}">Plugin Validate Component</router-link>
   ||  <router-link :to="{name:'watchcomponent'}">watch logger Componenet</router-link>
   ||  <router-link :to="{name:'chartcomponent'}">chart Componenet</router-link>
 
-  
-  <router-view></router-view>
+  <router-view></router-view> -->
+
+   <div>
+            
+        <TabMenu :model="items" />
+
+        <router-view />
+   
+    </div>
+     <ConfirmDialog />
+
 </div>
+    
    <Toast/>
 </template>
 
@@ -31,6 +41,9 @@
 //import watchcomponent from './components/watchcomponent.vue'
 //import day4 from './components/day4.vue'
 
+import ConfirmDialog from 'primevue/confirmdialog';
+
+
 export default {
   name: 'App',
   components: {
@@ -40,8 +53,41 @@ export default {
     // ,employeewithbootstrap
     //watchcomponent
   //  day4
+  ConfirmDialog
     
+  },
+  data() {
+        return {
+            items: [
+                {
+                    label: 'Home', 
+                    icon: 'pi pi-fw pi-home', 
+                    to: '/'
+                },
+                {
+                    label: 'User', 
+                    icon: 'pi pi-fw pi-users', 
+                    to: '/Day4'
+                },
+                {
+                    label: 'Watch', 
+                    icon: 'pi pi-fw pi-video', 
+                    to: '/watchcomponent'
+                },
+                {
+                    label: 'Chart', 
+                    icon: 'pi pi-fw pi-chart-bar', 
+                    to: '/chartcomponent'
+                },
+                {
+                    label: 'Settings', 
+                    icon: 'pi pi-fw pi-cog', 
+                    to: '/settings'
+                }
+            ]
+        }
   }
+
 }
 </script>
 

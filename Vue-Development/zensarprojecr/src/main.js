@@ -1,5 +1,6 @@
 import { createApp } from 'vue'
 import App from './App.vue'
+import ConfirmationService from 'primevue/confirmationservice';
 
 import router from './router/router'
 
@@ -31,8 +32,9 @@ import Toolbar from 'primevue/toolbar';
 import DataView from 'primevue/dataview';
 import Toast from 'primevue/toast';
 import ToastService from 'primevue/toastservice';
-
-
+import TabMenu from 'primevue/tabmenu';
+import Textarea from 'primevue/textarea';
+import Dialog from 'primevue/dialog';
 import Chart from 'primevue/chart';
 
 //createApp(App).mount('#app')
@@ -41,7 +43,8 @@ const app = createApp(App)
 app.use(PrimeVue,{inputStyle: 'filled'});
 
 app.use(ToastService);
-app.use(router)
+app.use(router);
+app.use(ConfirmationService);
 
 app.component('Button', Button);
 app.component('InputText', InputText);
@@ -52,7 +55,9 @@ app.component('Toolbar', Toolbar);
 app.component('DataView', DataView);
 app.component('Toast', Toast)
 app.component('Chart', Chart);
-
+app.component('TabMenu', TabMenu);
+app.component('Dialog', Dialog);
+app.component('Textarea', Textarea);
 app.directive("highlight",{ //highlight is the name of directive
     beforeMount(el,binding){ //it is a component lifecycle function which is called implicitely whenever rendered or mounted on the container
         console.log('in highlight') 
@@ -86,7 +91,19 @@ app.config.globalProperties.$filters = {
 
       CamleCase(value){
         return value.replace(/(?:^|\s|-)\S/g, x => x.toUpperCase());
+    },
+
+    Genderfilter(value){
+        if(!value)
+        return "-";
+        var isGender=value;
+        if(isGender=='M')
+         return "Male";
+        else
+        return "FeMale";
+
     }
+
 
 
   }

@@ -1,0 +1,2 @@
+ npm i -g json-server
+json-server --port 7000 --routes routes.json --watch countries.json

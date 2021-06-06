@@ -36,16 +36,16 @@ import TabMenu from 'primevue/tabmenu';
 import Textarea from 'primevue/textarea';
 import Dialog from 'primevue/dialog';
 import Chart from 'primevue/chart';
-
+import AutoComplete from 'primevue/autocomplete';
 //createApp(App).mount('#app')
 
 const app = createApp(App)
-app.use(PrimeVue,{inputStyle: 'filled'});
+app.use(PrimeVue, { inputStyle: 'filled' });
 
 app.use(ToastService);
 app.use(router);
 app.use(ConfirmationService);
-
+app.component('AutoComplete', AutoComplete);
 app.component('Button', Button);
 app.component('InputText', InputText);
 app.component('InputNumber', InputNumber);
@@ -58,55 +58,55 @@ app.component('Chart', Chart);
 app.component('TabMenu', TabMenu);
 app.component('Dialog', Dialog);
 app.component('Textarea', Textarea);
-app.directive("highlight",{ //highlight is the name of directive
-    beforeMount(el,binding){ //it is a component lifecycle function which is called implicitely whenever rendered or mounted on the container
-        console.log('in highlight') 
+app.directive("highlight", { //highlight is the name of directive
+    beforeMount(el, binding) { //it is a component lifecycle function which is called implicitely whenever rendered or mounted on the container
+        console.log('in highlight')
         el.style.background = binding
     }
 });
 
-app.directive("fontchange",{ //highlight is the name of directive
-    beforeMount(el){ //it is a component lifecycle function which is called implicitely whenever rendered or mounted on the container
-        console.log('in fontchange') 
+app.directive("fontchange", { //highlight is the name of directive
+    beforeMount(el) { //it is a component lifecycle function which is called implicitely whenever rendered or mounted on the container
+        console.log('in fontchange')
         el.style = 'font-family:georgia,garamond,serif;font-size:16px;font-style:italic;';
     }
 });
 
 
-app.directive("tableBg",{ //highlight is the name of directive
-    beforeMount(el){ //it is a component lifecycle function which is called implicitely whenever rendered or mounted on the container
-        console.log('in tableBg') 
+app.directive("tableBg", { //highlight is the name of directive
+    beforeMount(el) { //it is a component lifecycle function which is called implicitely whenever rendered or mounted on the container
+        console.log('in tableBg')
         el.style = 'background-color:#FFFFE0;';
     }
 });
 
 app.config.globalProperties.$filters = {
     currencyUSD(value) {
-      return '$' + value
+        return '$' + value
     },
 
     toUpper(value) {
         return value.toUpperCase();
-      },
+    },
 
-      CamleCase(value){
+    CamleCase(value) {
         return value.replace(/(?:^|\s|-)\S/g, x => x.toUpperCase());
     },
 
-    Genderfilter(value){
-        if(!value)
-        return "-";
-        var isGender=value;
-        if(isGender=='M')
-         return "Male";
+    Genderfilter(value) {
+        if (!value)
+            return "-";
+        var isGender = value;
+        if (isGender == 'M')
+            return "Male";
         else
-        return "FeMale";
+            return "FeMale";
 
     }
 
 
 
-  }
+}
 
 
 app.mount('#app');

@@ -1,7 +1,9 @@
 <template lang="html">
 
   <section class="not-found">
-    <h1>Oops! looks like the page you were looking for doeesn't exist</h1>
+    
+      <img src='@/assets/serverdown.png' style="width:50%;" alt="" /> 
+
   </section>
 
 </template>

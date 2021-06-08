@@ -11,14 +11,7 @@ import 'primeicons/primeicons.css'
 
 import 'primeflex/primeflex.css';
 
-// import 'primeflex/src/_variables.css';
-// import 'primeflex/src/_grid.css';
-// import 'primeflex/src/_formlayour.css';
-// import 'primeflex/src/_display.css';
-// import 'primeflex/src/_text.css';
-// import 'primeflex/src/flexbox/_flexbox.css';
-// import 'primeflex/src/_spacing.css';
-// import 'primeflex/src/_elevation.css';
+
 
 
 
@@ -37,6 +30,7 @@ import Textarea from 'primevue/textarea';
 import Dialog from 'primevue/dialog';
 import Chart from 'primevue/chart';
 import AutoComplete from 'primevue/autocomplete';
+import Timeline from 'primevue/timeline';
 //createApp(App).mount('#app')
 
 const app = createApp(App)
@@ -57,6 +51,7 @@ app.component('Toast', Toast)
 app.component('Chart', Chart);
 app.component('TabMenu', TabMenu);
 app.component('Dialog', Dialog);
+app.component('Timeline', Timeline);
 app.component('Textarea', Textarea);
 app.directive("highlight", { //highlight is the name of directive
     beforeMount(el, binding) { //it is a component lifecycle function which is called implicitely whenever rendered or mounted on the container

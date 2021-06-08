@@ -1,28 +1,21 @@
 <template>
+<div class="p-shadow-9">
 
-<div>
+    <div>
 
- <!-- <router-link :to="{name:'Home'}">Home</router-link> ||
-  <router-link :to="{name:'Day4'}">Employee List</router-link> ||
-  <router-link :to="{name:'About'}">Json Employee List</router-link>
-  ||  <router-link :to="{name:'PluginValidateComponent'}">Plugin Validate Component</router-link>
-  ||  <router-link :to="{name:'watchcomponent'}">watch logger Componenet</router-link>
-  ||  <router-link :to="{name:'chartcomponent'}">chart Componenet</router-link>
-
-  <router-view></router-view> -->
-
-   <div>
-            
         <TabMenu :model="items" />
-
+       
+       
+    <div class="divpading">
         <router-view />
-   
     </div>
-     <ConfirmDialog />
+
+    </div>
+    <ConfirmDialog />
 
 </div>
-    
-   <Toast/>
+
+<Toast />
 </template>
 
 <script>
@@ -43,61 +36,74 @@
 
 import ConfirmDialog from 'primevue/confirmdialog';
 
-
 export default {
-  name: 'App',
-  components: {
-    // HelloWorld,singlepageapp,singlepageevent,EmployeeList
-    //validation,PluginValidateComponent
-   // jsoncommunication
-    // ,employeewithbootstrap
-    //watchcomponent
-  //  day4
-  ConfirmDialog
-    
-  },
-  data() {
+    name: 'App',
+    components: {
+        // HelloWorld,singlepageapp,singlepageevent,EmployeeList
+        //validation,PluginValidateComponent
+        // jsoncommunication
+        // ,employeewithbootstrap
+        //watchcomponent
+        //  day4
+        ConfirmDialog
+
+    },
+    data() {
         return {
-            items: [
-                {
-                    label: 'Home', 
-                    icon: 'pi pi-fw pi-home', 
+            items: [{
+                    label: 'Home',
+                    icon: 'pi pi-fw pi-home',
                     to: '/'
                 },
                 {
-                    label: 'User', 
-                    icon: 'pi pi-fw pi-users', 
+                    label: 'User',
+                    icon: 'pi pi-fw pi-users',
                     to: '/Day4'
                 },
                 {
-                    label: 'Watch', 
-                    icon: 'pi pi-fw pi-video', 
+                    label: 'Watch',
+                    icon: 'pi pi-fw pi-video',
                     to: '/watchcomponent'
                 },
                 {
-                    label: 'Chart', 
-                    icon: 'pi pi-fw pi-chart-bar', 
+                    label: 'Chart',
+                    icon: 'pi pi-fw pi-chart-bar',
                     to: '/chartcomponent'
                 },
                 {
-                    label: 'Settings', 
-                    icon: 'pi pi-fw pi-cog', 
+                    label: 'Status (Time Lines)',
+                    icon: 'pi pi-fw pi-sitemap',
+                    to: '/status'
+                },
+                {
+                    label: 'Registraion Form',
+                    icon: 'pi pi-fw pi-user-plus',
+                    to: '/userregistrationform'
+                },
+                {
+                    label: 'Settings',
+                    icon: 'pi pi-fw pi-cog',
                     to: '/settings'
                 }
             ]
         }
-  }
+    }
 
 }
 </script>
 
 <style>
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+    font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-align: center;    margin-top: 0px;
 }
+.divpading {
+  padding-top: 5px;
+  padding-right: 40px;
+  padding-bottom: 20px;
+  padding-left: 80px;
+}
+
 </style>

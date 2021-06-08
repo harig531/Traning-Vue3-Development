@@ -8,8 +8,8 @@ import employeewithbootstrap from "@/components/employeewithbootstrap.vue";
 import PluginValidateComponent from "@/components/PluginValidateComponent.vue";
 import watchcomponent from "@/components/watchcomponent.vue";
 import chartcomponent from "@/components/ChartComponent/Chart.vue";
-
-
+import status from "@/components/status.vue";
+import userregistrationform from "@/components/userregistrationform.vue"
 
 // define all the route rules here
 const routes = [
@@ -49,6 +49,16 @@ const routes = [
                     path : "/User/:id", 
                     name : "User",
                     component: User
+                },
+                {
+                    path : "/status", 
+                    name : "status",
+                    component: status
+                },
+                {
+                    path : "/userregistrationform", 
+                    name : "userregistrationform",
+                    component: userregistrationform
                 },
                 {
                     path : "/:catchAll(.*)",  // This is basically Regex expresssion in vue which will map all unrealistic routes and route to not found component

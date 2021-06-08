@@ -17,7 +17,7 @@
         <AutoComplete v-model="selectedCountry1" :suggestions="filteredCountries" @complete="searchCountry($event)" :dropdown="true" field="name" forceSelection>
               <template #item="slotProps">
                         <div class="country-item">
-                            <img src="../assets/images/flag_placeholder.png" :class="'flag flag-' + slotProps.item.code.toLowerCase()" width="8" />
+                            <!-- <img src="../assets/images/flag_placeholder.png" :class="'flag flag-' + slotProps.item.code.toLowerCase()" width="8" /> -->
                             <div>{{slotProps.item.name}}</div>
                         </div>
                     </template>
@@ -33,46 +33,37 @@
 </template>
 
 <script lang="js">
-import { ref, watch } from "vue";
-import axios from 'axios'
+import { ref, watch,onMounted  } from "vue";
+// /import axios from 'axios';
+import CountryService from '@/service/CountryService';
+
 //import { useConfirm } from "primevue/useconfirm";
 
 export default {
     name: 'watchcomponent',
     props: [],
-    mounted() {
-        this.getCountries();
-    },
     setup() {
 
-        //  const confirm = useConfirm();
-        //   confirm.require({
-        //       message: 'Are you sure you want to proceed?',
-        //       header: 'Confirmation',
-        //       icon: 'pi pi-exclamation-triangle',
-        //       accept: () => {
-        //           //callback to execute when user confirms the action
-        //       },
-        //       reject: () => {
-        //           //callback to execute when user rejects the action
-        //       }
-        //   });
-
+  onMounted(() => {
+            countryService.value.getCountries().then(data => countries.value = data);
+        })
+        const countries=  ref();
+        const filteredCountries=ref();
+        const selectedCountry1= ref();
+        const countryService = ref(new CountryService());
         const search = ref("");
         watch(search, (newSearch, previousSearch) => {
             console.log("old the value :  " + previousSearch);
             console.log("Search the value :  " + newSearch);
         })
         return {
-            search,
+            search,countryService,countries,filteredCountries,selectedCountry1
         }
 
     },
     data() {
         return {
-            countries: null,
-            filteredCountries: null,
-            selectedCountry1: null
+ 
         }
     },
     methods: {
@@ -106,12 +97,12 @@ export default {
 
         getCountries() {
 
-            axios.get('http://localhost:7000/countries/list')
-                .then((response) => {
-                    console.log(response.data);
-                    this.countries = response.data;
+        //    this.countryService.value.getCountries()
+        //         .then((response) => {
+        //             console.log(response.data);
+        //             this.countries = response.data;
 
-                })
+        //         })
 
         },
         searchCountry(event) {

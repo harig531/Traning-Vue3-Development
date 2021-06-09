@@ -15,6 +15,7 @@
     "primeflex": "^2.0.0",
     "primeicons": "^4.1.0",
     "primevue": "^3.3.5",
+    "sass-loader": "^10.2.0",
     "vee-validate": "^4.4.2",
     "vue": "^3.0.0",
     "vue-awesome": "^4.3.1",
@@ -29,8 +30,7 @@
     "@vue/compiler-sfc": "^3.0.0",
     "babel-eslint": "^10.1.0",
     "eslint": "^6.7.2",
-    "eslint-plugin-vue": "^7.0.0",
-    "sass-loader": "^12.0.0"
+    "eslint-plugin-vue": "^7.0.0"
   },
   "eslintConfig": {
     "root": true,

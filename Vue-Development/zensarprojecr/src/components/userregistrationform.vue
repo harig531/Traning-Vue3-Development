@@ -71,7 +71,24 @@
                 </div>
                 <div class="p-field p-col-12 p-md-4">
                     <label for="city">Country</label>
-                    <InputText id="city" type="text" />
+                    <Dropdown v-model="selectedCountry" :options="countries" optionLabel="name" :filter="true" placeholder="Select a Country" :showClear="true">
+                        <template #value="slotProps">
+                            <div class="country-item country-item-value" v-if="slotProps.value">
+                                <!-- <img src="@/assets/images/flag_placeholder.png" :class="'flag flag-' + slotProps.option.code.toLowerCase()" width="17" /> -->
+                                <div>{{slotProps.value.name}}</div>
+                            </div>
+                            <span v-else>
+                                {{slotProps.placeholder}}
+                            </span>
+                        </template>
+                        <template #option="slotProps">
+                            <div class="country-item">
+                               <!-- <img src="@/assets/images/flag_placeholder.png" :class="'flag flag-' + slotProps.option.code.toLowerCase()" width="17" /> -->
+                                <div>{{slotProps.option.name}}</div>
+                            </div>
+                        </template>
+                    </Dropdown>
+
                 </div>
                 <div class="p-field p-col-12 p-md-4">
                     <label for="city">City</label>
@@ -86,10 +103,10 @@
                     <InputText id="zip" type="text" />
                 </div>
 
-                   <div class="p-field p-col-12 p-md-8">
+                <div class="p-field p-col-12 p-md-8">
                     <label for="remaks">Remarks</label>
                     <Textarea id="remaks" rows="4" />
-                </div>
+                    </div>
            </div>
           </div>
             <div class="p-field p-col-12 p-md-2 p-mx-auto ">
@@ -97,16 +114,20 @@
                <Button label="Clear" class="p-button-help p-mr-2 p-mb-2" />
                 </div>
 
-
  </div>
 </div>
 </template>
 
 <script lang="js">
+import axios from 'axios'
 export default {
     name: 'userregistrationform',
     props: [],
     mounted() {
+
+    
+
+  this.getlistofcountry();
 
     },
     data() {
@@ -115,9 +136,25 @@ export default {
             date2: null,
             yearRange: (new Date().getFullYear() - 125) + ':' + (new Date().getFullYear()),
             city: null,
+            selectedCountry:null,
+            countries:[],
         }
     },
     methods: {
+
+        getlistofcountry()
+        {
+            axios.get('data/countries.json')
+            .then((response)=>{
+        console.log(response.data.data);
+        this.countries = response.data.data;
+
+  
+      })
+            
+            
+           
+        }
 
     },
     computed: {
@@ -126,23 +163,20 @@ export default {
 }
 </script>
 
-<style scoped>
-.userregistrationform {
-}
+<style scoped >
+.userregistrationform {}
 
 .p-field {
-  margin-bottom: 1em !important;
+    margin-bottom: 1em !important;
 }
 
-.layout-content .content-section.implementation > h3 {
-  font-weight: 600;
+.layout-content .content-section.implementation>h3 {
+    font-weight: 600;
 }
 
 textarea {
-  resize: none;
+    resize: none;
 }
 
-.label {
-  align: left;
-}
+
 </style>

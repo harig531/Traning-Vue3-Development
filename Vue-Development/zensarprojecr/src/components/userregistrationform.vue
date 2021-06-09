@@ -1,40 +1,105 @@
 <template lang="html">
 <div>
-<section class="userregistrationform">
-    <h1 style=" text-align: center;">User Registration Form</h1>
-</section>
+    <section class="userregistrationform">
+        <h1 style=" text-align: center;">User Registration Form</h1>
+    </section>
 
-<div class="content-section implementation">
-    <div class="card">
-            <div class="p-fluid p-formgrid p-grid">
-                  <div class="p-field p-col-12 p-md-6">
-                        <label for="firstname6">Firstname</label>
-                        <InputText id="firstname6"  type="text" />
+    <div class="content-section implementation">
+        <div class="card p-p-6">
+            <div class="p-fluid p-grid">
+
+                <div class="p-col-12 p-md-4">
+                    <div class="p-inputgroup">
+                        <span class="p-inputgroup-addon">
+                            <i class="pi pi-envelope"></i>
+                        </span>
+                        <InputText id="Fulllname" placeholder="Full Name" type="text" />
                     </div>
-                <div class="p-field p-col-12 p-md-6">
-                    <label for="lastname6">Lastname</label>
-                    <InputText id="lastname6" type="text" />
                 </div>
-                <div class="p-field p-col-12">
-                    <label for="address">Address</label>
-                    <Textarea id="address" rows="4" />
+
+                <div class="p-col-12 p-md-4">
+                    <div class="p-inputgroup">
+                        <span class="p-inputgroup-addon">
+                            <i class="pi pi-user"></i>
+                        </span>
+                        <InputText placeholder="Username" />
                     </div>
-                <div class="p-field p-col-12 p-md-6">
+                </div>
+
+                <div class="p-col-12 p-md-4">
+                    <div class="p-inputgroup">
+                        <span class="p-inputgroup-addon">
+                            <i class="pi pi-eye-slash"></i>
+                        </span>
+                        <Password id="password" placeholder="Password" v-model="city" toggleMask />
+                    </div>
+                </div>
+                <div class="p-col-12 p-md-4">
+                    <div class="p-inputgroup">
+                        <span class="p-inputgroup-addon">
+                            <i class="pi pi-envelope"></i>
+                        </span>
+                        <InputText id="EmailID" placeholder="Email Id" type="text" />
+                    </div>
+                </div>
+
+                <div class="p-col-12 p-md-4">
+                    <div class="p-inputgroup">
+                        <span class="p-inputgroup-addon">
+                            <i class="pi pi-calendar"></i>
+                        </span>
+                        <Calendar id="dateformat" placeholder="Date of birth" v-model="date2" dateFormat="dd-mm-yy" :monthNavigator="true" :yearNavigator="true" :yearRange="yearRange" />
+                    </div>
+                </div>
+
+                <div class="p-col-12 p-md-4">
+                    <div class="p-inputgroup">
+                        <label for="city1">Gender : </label>
+                        <div class="p-field-radiobutton">
+                            <RadioButton id="male" name="gender" value="M" v-model="city" />
+                            <label for="city1">Male</label>
+                        </div>
+                        <div class="p-field-radiobutton">
+                            <RadioButton id="female" name="gender" value="F" v-model="city" />
+                            <label for="city2">FeMale</label>
+                        </div>
+                        <div class="p-field-radiobutton">
+                            <RadioButton id="others" name="gender" value="O" v-model="city" />
+                            <label for="city2">Others</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="p-field p-col-12 p-md-4">
+                    <label for="city">Country</label>
+                    <InputText id="city" type="text" />
+                </div>
+                <div class="p-field p-col-12 p-md-4">
                     <label for="city">City</label>
                     <InputText id="city" type="text" />
                 </div>
-                <div class="p-field p-col-12 p-md-3">
+                <div class="p-field p-col-12 p-md-4">
                     <label for="state">State</label>
                     <Dropdown inputId="state" v-model="selectedState" :options="states" optionLabel="name" placeholder="Select" />
                 </div>
-                <div class="p-field p-col-12 p-md-3">
+                <div class="p-field p-col-12 p-md-4">
                     <label for="zip">Zip</label>
                     <InputText id="zip" type="text" />
                 </div>
+
+                   <div class="p-field p-col-12 p-md-8">
+                    <label for="remaks">Remarks</label>
+                    <Textarea id="remaks" rows="4" />
+                </div>
            </div>
           </div>
-           </div>
-              </div>
+            <div class="p-field p-col-12 p-md-2 p-mx-auto ">
+               <Button label="Save" class="p-button-success p-mr-2 p-mb-2"  />
+               <Button label="Clear" class="p-button-help p-mr-2 p-mb-2" />
+                </div>
+
+
+ </div>
+</div>
 </template>
 
 <script lang="js">
@@ -45,8 +110,11 @@ export default {
 
     },
     data() {
-        return {
 
+        return {
+            date2: null,
+            yearRange: (new Date().getFullYear() - 125) + ':' + (new Date().getFullYear()),
+            city: null,
         }
     },
     methods: {
@@ -61,18 +129,20 @@ export default {
 <style scoped>
 .userregistrationform {
 }
-        .p-field {
-            margin-bottom: 1em !important;
-        }
+
+.p-field {
+  margin-bottom: 1em !important;
+}
 
 .layout-content .content-section.implementation > h3 {
-    font-weight: 600;
+  font-weight: 600;
 }
+
 textarea {
-    resize: none;
+  resize: none;
 }
-.label
-{
-    align:left;
+
+.label {
+  align: left;
 }
 </style>

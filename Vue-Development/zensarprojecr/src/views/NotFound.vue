@@ -2,7 +2,7 @@
 
   <section class="not-found">
     
-      <img src='@/assets/serverdown.png' style="width:50%;" alt="" /> 
+      <img src='@/assets/serverdown.png' alt="" style=" width:50%;" /> 
 
   </section>
 
@@ -34,6 +34,6 @@
 
 <style scoped >
   .not-found {
-
+     text-align: center;
   }
 </style>

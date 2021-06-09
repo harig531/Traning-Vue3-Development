@@ -32,6 +32,11 @@ import Chart from 'primevue/chart';
 import AutoComplete from 'primevue/autocomplete';
 import Timeline from 'primevue/timeline';
 import Tooltip from 'primevue/tooltip';
+import Calendar from 'primevue/calendar';
+import Checkbox from 'primevue/checkbox';
+import RadioButton from 'primevue/radiobutton';
+import Password from 'primevue/password';
+import Dropdown from 'primevue/dropdown';
 //createApp(App).mount('#app')
 
 const app = createApp(App)
@@ -54,6 +59,13 @@ app.component('TabMenu', TabMenu);
 app.component('Dialog', Dialog);
 app.component('Timeline', Timeline);
 app.component('Textarea', Textarea);
+app.component('Calendar', Calendar);
+app.component('Checkbox', Checkbox);
+app.component('RadioButton', RadioButton);
+app.component('Password', Password);
+app.component('Dropdown', Dropdown);
+
+
 app.directive("highlight", { //highlight is the name of directive
     beforeMount(el, binding) { //it is a component lifecycle function which is called implicitely whenever rendered or mounted on the container
         console.log('in highlight')

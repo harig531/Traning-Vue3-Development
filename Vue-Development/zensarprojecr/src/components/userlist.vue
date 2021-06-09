@@ -1,8 +1,7 @@
 <template lang="html">
 
-  <section class="home">
-    <h1>Welcome Zensar Application</h1>
-    <img src='@/assets/zensar.jpg' style="width:50%;" alt="" /> 
+  <section class="userlist">
+    <h1>userlist Component</h1>
   </section>
 
 </template>
@@ -10,7 +9,7 @@
 <script lang="js">
 
   export default  {
-    name: 'Home',
+    name: 'userlist',
     props: [],
     mounted () {
 
@@ -31,9 +30,8 @@
 
 </script>
 
-<style scoped >
-  .home {
-    text-align: center;
+<style scoped lang="scss">
+  .userlist {
 
   }
 </style>

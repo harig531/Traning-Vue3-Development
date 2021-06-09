@@ -5,10 +5,11 @@
 
         <TabMenu :model="items" />
        
-       
+       <transition name="fade">  
     <div class="divpading">
-        <router-view />
+        <router-view class=" p-card" />
     </div>
+      </transition>
 
     </div>
     <ConfirmDialog />
@@ -96,12 +97,12 @@ export default {
 #app {
     font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol;
     -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    text-align: center;    margin-top: 0px;
+    -moz-osx-font-smoothing: grayscale;    
+    margin-top: 0px;
 }
 .divpading {
   padding-top: 5px;
-  padding-right: 40px;
+  padding-right: 80px;
   padding-bottom: 20px;
   padding-left: 80px;
 }

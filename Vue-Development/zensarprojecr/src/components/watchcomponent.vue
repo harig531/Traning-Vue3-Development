@@ -125,5 +125,8 @@ export default {
 </script>
 
 <style scoped>
-.watchcomponent {}
+.watchcomponent {
+
+       text-align: center;
+}
 </style>

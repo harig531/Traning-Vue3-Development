@@ -31,6 +31,7 @@ import Dialog from 'primevue/dialog';
 import Chart from 'primevue/chart';
 import AutoComplete from 'primevue/autocomplete';
 import Timeline from 'primevue/timeline';
+import Tooltip from 'primevue/tooltip';
 //createApp(App).mount('#app')
 
 const app = createApp(App)
@@ -59,6 +60,7 @@ app.directive("highlight", { //highlight is the name of directive
         el.style.background = binding
     }
 });
+app.directive('tooltip', Tooltip);
 
 app.directive("fontchange", { //highlight is the name of directive
     beforeMount(el) { //it is a component lifecycle function which is called implicitely whenever rendered or mounted on the container

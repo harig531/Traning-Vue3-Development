@@ -1,7 +1,7 @@
 <template lang="html">
 <div class="p-card">
 
-    <h2 v-fontchange> Employee Form</h2>
+    <h2 v-fontchange style=" text-align: center;"> Employee Form</h2>
     <!-- <form>
 <div class="p-field p-grid">
     <label for="firstname" v-fontchange class="p-col-fixed" style="width:100px">First Name</label>
@@ -36,7 +36,7 @@
 
             <Toolbar class="p-mb-4">
                 <template #left>
-                    <Button label="New" icon="pi pi-plus" class="p-button-success p-mr-2" @click="openNew" />
+                    <Button label="New" icon="pi pi-plus" class="p-button-success p-mr-2" @click="openNew"  v-tooltip.bottom="'Add New User'" />
                     <Button label="Delete" icon="pi pi-trash" class="p-button-danger" />
                 </template>
 
@@ -67,8 +67,8 @@
                 </Column>
                 <Column>
                     <template #body="slotProps">
-                        <Button icon="pi pi-check" class="p-button-rounded p-button-text" type="submit" @click.prevent="editUserProp(slotProps.data)" tooltip="Edit" />
-                        <Button icon="pi pi-times" class="p-button-rounded p-button-danger p-button-text" type="Delete" @click="deleteUser(slotProps.data.id)" tooltip="Delete" />
+                        <Button icon="pi pi-check" class="p-button-rounded p-button-text" type="submit" @click.prevent="editUserProp(slotProps.data)" tooltip="Edit" v-tooltip.left="'Edit User'"/>
+                        <Button icon="pi pi-times" class="p-button-rounded p-button-danger p-button-text" type="Delete" @click="deleteUser(slotProps.data.id)" tooltip="Delete" v-tooltip.right="'Delete User'"/>
                     </template>
                 </Column>
                 
@@ -103,9 +103,9 @@
                 <Textarea id="Remarks" v-model="newUserAdd.remarks" rows="3" cols="20" />
                 </div>
             <template #footer>
-                <Button label="Cancel" icon="pi pi-times" class="p-button-text" @click="hideDialog"/>
-                <Button  v-if="!isupdate"  label="Save" icon="pi pi-check" class="p-button-text" @click="saveUser" />
-                <Button  v-if="isupdate" label="Update" icon="pi pi-check" class="p-button-text" @click="updateUser" />
+                <Button label="Cancel" icon="pi pi-times" class="p-button-text" @click="hideDialog"  v-tooltip.bottom="'Cancel'"/>
+                <Button  v-if="!isupdate"  label="Save" icon="pi pi-check" class="p-button-text" @click="saveUser"  v-tooltip.bottom="'Save New User'" />
+                <Button  v-if="isupdate" label="Update" icon="pi pi-check" class="p-button-text" @click="updateUser" v-tooltip.bottom="'update User'"  />
             </template>
 
             

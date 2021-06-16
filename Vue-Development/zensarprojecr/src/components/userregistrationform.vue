@@ -11,7 +11,7 @@
                 <div class="p-col-12 p-md-4">
                     <div class="p-inputgroup">
                         <span class="p-inputgroup-addon">
-                            <i class="pi pi-envelope"></i>
+                            <i class="pi pi-user"></i>
                         </span>
                         <InputText id="Fulllname" placeholder="Full Name" type="text" />
                     </div>
@@ -22,7 +22,7 @@
                         <span class="p-inputgroup-addon">
                             <i class="pi pi-user"></i>
                         </span>
-                        <InputText placeholder="Username" />
+                        <InputText placeholder="User Name" />
                     </div>
                 </div>
 
@@ -82,11 +82,11 @@
                             </span>
                         </template>
                         <template #option="slotProps">
-                            <div class="country-item">
-                               <!-- <img src="@/assets/images/flag_placeholder.png" :class="'flag flag-' + slotProps.option.code.toLowerCase()" width="17" /> -->
-                                <div>{{slotProps.option.name}}</div>
-                            </div>
-                        </template>
+  <div class="country-item">
+    <!-- <img src="@/assets/images/flag_placeholder.png" :class="'flag flag-' + slotProps.option.code.toLowerCase()" width="17" /> -->
+    <div>{{ slotProps.option.name }}</div>
+  </div>
+</template>
                     </Dropdown>
 
                 </div>
@@ -164,19 +164,18 @@ export default {
 </script>
 
 <style scoped >
-.userregistrationform {}
-
-.p-field {
-    margin-bottom: 1em !important;
+.userregistrationform {
 }
 
-.layout-content .content-section.implementation>h3 {
-    font-weight: 600;
+.p-field {
+  margin-bottom: 1em !important;
+}
+
+.layout-content .content-section.implementation > h3 {
+  font-weight: 600;
 }
 
 textarea {
-    resize: none;
+  resize: none;
 }
-
-
 </style>

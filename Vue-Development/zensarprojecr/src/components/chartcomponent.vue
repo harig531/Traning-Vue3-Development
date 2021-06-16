@@ -2,6 +2,7 @@
 
 <Chart type="pie" :data="chartData" />
 
+
 </template>
 
 <script lang="js">
